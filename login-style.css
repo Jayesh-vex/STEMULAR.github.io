@@ -33,24 +33,18 @@ body {
 
 /* --- PORTAL HEADER --- */
 .portal-header {
-  position: fixed; top: 0; left: 0; width: 100%; height: 50px; /* Reduced height */
+  position: fixed; top: 0; left: 0; width: 100%; height: 30px; 
   display: flex; justify-content: space-between; align-items: center; padding: 0 5%; z-index: 100;
   background: linear-gradient(to bottom, rgba(5, 6, 10, 0.85), transparent);
   backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-  font-size: 14px;
-}
-
-.portal-header,
-.portal-header * {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .portal-logo {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   color: var(--text-main);
-  font-size: 1.1rem;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 2px;
   text-decoration: none;
