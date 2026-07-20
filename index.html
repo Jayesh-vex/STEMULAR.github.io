@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Optimized viewport for iOS notched screens and zoom prevention -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  
+  <!-- iOS Safari & Mobile Web App Theme Styling -->
+  <meta name="theme-color" content="#05060a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  
+  <title>STEMULAR — Next-Generation Learning Platform</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Animated Ambient Background Lighting -->
+  <div class="ambient-background">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <!-- Minimalist Navigation Bar -->
+  <header class="navbar">
+    <div class="logo">
+      <span class="logo-icon">⏣</span> STEMULAR
+    </div>
+    <nav class="nav-links">
+      <a href="explore.html">Explore</a>
+      <a href="premium.html">Premium</a>
+      <a href="about.html">About</a>
+    </nav>
+    <a href="start-now.html" class="btn-sm">Start Now</a>
+  </header>
+
+  <!-- Main Presentation Slider -->
+  <main class="slider-container" id="slider">
+    <div class="card-track" id="track">
+      
+      <!-- CARD 1: Focused / Active -->
+      <div class="card active" data-index="0">
+        <div class="card-glow"></div>
+        <div class="card-content">
+          <div class="card-badge">01 / OVERVIEW</div>
+          <h1 class="card-title">Learn Smarter with<br><span class="gradient-text">STEMULAR.</span></h1>
+          <p class="card-description">
+            STEMULAR is an interactive learning platform designed to help students strengthen their understanding of Science and Mathematics through engaging lessons, visual explanations, quizzes, and real-world applications.
+          </p>
+          <div class="card-actions">
+            <a href="start-now.html" class="btn btn-primary">Learn now <span class="arrow">→</span></a>
+            <a href="explore.html" class="btn btn-secondary">Explore</a>
+          </div>
+        </div>
+        <div class="card-visual">
+          <div class="abstract-grid"></div>
+          <div class="orbiting-symbol" aria-hidden="true">⦿</div>
+          <div class="floating-badge">79% of Education Guaranteed</div>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="card" data-index="1">
+        <div class="card-glow"></div>
+        <div class="card-content">
+          <div class="card-badge">02 / SCIENCE</div>
+          <h1 class="card-title">Explore<br><span class="gradient-text">Science.</span></h1>
+          <p class="card-description">
+            Discover Biology, Chemistry, Physics, and Earth Science through interactive simulations, experiments, and visual lessons that make complex scientific concepts easier to understand and remember.
+          </p>
+          <div class="card-actions">
+            <a href="explore.html#cta" class="btn btn-primary">Learn Science <span class="arrow">→</span></a>
+          </div>
+        </div>
+        <div class="card-visual visual-cyan">
+          <div class="circle-pulse"></div> 
+          <div class="science-icon">⚛</div> 
+          <div class="floating-badge">Many Topics Included</div>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="card" data-index="2">
+        <div class="card-glow"></div>
+        <div class="card-content">
+          <div class="card-badge">03 / MATHEMATICS</div>
+          <h1 class="card-title">Master Every<br><span class="gradient-text">Mathematical Concept.</span></h1>
+          <p class="card-description">
+            Practice mathematical concepts from Algebra and Geometry to Calculus with step-by-step solutions, interactive exercises, and instant feedback designed to build confidence and improve problem-solving skills.
+          </p>
+          <div class="card-actions">
+            <a href="explore.html#cta" class="btn btn-primary">Learn Math <span class="arrow">→</span></a>
+          </div>
+        </div>
+        <div class="card-visual visual-purple">
+          <div class="math-symbols" aria-hidden="true">
+            <span class="math-symbol symbol-plus">+</span>
+            <span class="math-symbol symbol-minus">-</span>
+            <span class="math-symbol symbol-divide">÷</span>
+            <span class="math-symbol symbol-times">×</span>
+            <span class="math-symbol symbol-equals">=</span>
+          </div>
+          <div class="floating-badge">Improve Mathematical Intelligence</div>
+        </div>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="card" data-index="3">
+        <div class="card-glow"></div>
+        <div class="card-content">
+          <div class="card-badge">04 / ABOUT</div>
+          <h1 class="card-title">Built for Every<br><span class="gradient-text">Academic Learner.</span></h1>
+          <p class="card-description">
+             STEMULAR aims to inspire curiosity and academic excellence by providing an accessible, engaging, and innovative learning environment where students can develop their knowledge anytime, anywhere.
+          </p>
+          <div class="card-actions">
+            <a href="start-now.html" class="btn btn-primary">Start Now <span class="arrow">→</span></a>
+            <a href="about.html" class="btn btn-secondary">About</a>
+          </div>
+        </div>
+        <div class="card-visual visual-emerald">
+          <div class="code-preview">
+            <code>$ stemular deploy --learn --fast</code>
+          </div>
+          <div class="floating-badge">Learn Quickly</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Navigation Controls & Progress -->
+    <div class="slider-controls">
+      <div class="pagination-dots" id="dots">
+        <span class="dot active" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+        <span class="dot" data-index="3"></span>
+      </div>
+      <div class="scroll-hint">
+        <span>Scroll or swipe to navigate</span>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

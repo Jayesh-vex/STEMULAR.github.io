@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STEMULAR — Dictionary</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="login-page">
+  <div class="ambient-background">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <main class="main-screen-shell">
+    <section class="main-screen-card dictionary-card" aria-label="Dictionary page">
+      <div class="main-screen-top">
+        <div>
+          <p class="card-badge">DICTIONARY</p>
+          <h1 class="card-title">Look up a word</h1>
+        </div>
+        <a href="main-screen.html" class="btn btn-secondary">Back</a>
+      </div>
+
+      <div class="dictionary-controls">
+        <label class="dictionary-label" for="apiKey">Merriam-Webster API key</label>
+        <input id="apiKey" type="password" placeholder="Paste your API key" data-api-key="facecdb1-08fd-42dc-9af8-a44d597d0606">
+        <button id="saveKeyBtn" class="btn btn-secondary" type="button">Save key</button>
+      </div>
+
+      <form id="dictionaryForm" class="search-box dictionary-search">
+        <span class="search-icon">⌕</span>
+        <input id="wordInput" type="text" placeholder="Type a word like 'science'">
+        <button class="btn btn-primary" type="submit">Search</button>
+      </form>
+
+      <div id="dictionaryResult" class="dictionary-result">
+        Enter a word to see its definition.
+      </div>
+    </section>
+  </main>
+
+  <script src="dictionary.js"></script>
+</body>
+</html>

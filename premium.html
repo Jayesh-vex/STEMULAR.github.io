@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Plans — STEMULAR</title>
+  <link rel="stylesheet" href="premium-style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Ambient Background Glows -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
+  <!-- Navigation matching the About page -->
+  <header class="navbar">
+    <a href="index.html" class="logo" aria-label="STEMULAR home">
+      <span class="logo-icon">⏣</span> STEMULAR
+    </a>
+    <nav class="nav-links">
+      <a href="explore.html">Explore</a>
+      <a href="premium.html" class="active" aria-current="page">Premium</a>
+      <a href="about.html">About</a>
+    </nav>
+    <a href="start-now.html" class="btn-sm">Start Now</a>
+  </header>
+
+  <!-- Pricing Section -->
+  <main class="pricing-section">
+    <div class="pricing-header">
+      <span class="badge">ACCESS THE FUTURE</span>
+      <h1>Unlock Unlimited Discovery</h1>
+      <p>Choose the plan that powers your learning journey. Upgrade, downgrade, or cancel anytime.</p>
+    </div>
+
+    <div class="pricing-grid">
+      
+      <!-- CARD 1: FREE PLAN -->
+      <div class="pricing-card tilt-card" data-featured="false">
+        <div class="card-glare"></div>
+        <div class="card-content">
+          <div class="plan-name">Free Plan</div>
+          <div class="plan-price">₱0<span>/forever</span></div>
+          <p class="plan-desc">Essential tools for curious minds exploring basic scientific principles.</p>
+          
+          <hr class="card-divider">
+
+          <ul class="plan-features">
+            <li><span class="check">✓</span> 5 Sandbox Simulations per day</li>
+            <li><span class="check">✓</span> Access to community forums</li>
+            <li><span class="check">✓</span> Basic progress tracking</li>
+            <li><span class="check disabled">✕</span> <span class="text-disabled">Premium AI lab assistant</span></li>
+            <li><span class="check disabled">✕</span> <span class="text-disabled">Zero advertisements</span></li>
+            <li><span class="check disabled">✕</span> <span class="text-disabled">Offline downloadable modules</span></li>
+          </ul>
+
+          <a href="start-now.html" class="btn-card btn-secondary">Get Started Free</a>
+        </div>
+      </div>
+
+      <!-- CARD 2: 1-YEAR PREMIUM PLAN (HIGHLIGHTED) -->
+      <div class="pricing-card tilt-card featured" data-featured="true">
+        <div class="card-glare"></div>
+        <div class="popular-tag">BEST VALUE — SAVE 37%</div>
+        <div class="card-content">
+          <div class="plan-name">1-Year Premium</div>
+          <div class="plan-price">₱949<span>/year</span></div>
+          <p class="plan-desc">Maximum acceleration for dedicated scholars and future engineers.</p>
+          
+          <hr class="card-divider">
+
+          <ul class="plan-features">
+            <li><span class="check">✓</span> Unlimited Sandbox Simulations</li>
+            <li><span class="check">✓</span> Full access to quantum & aerospace labs</li>
+            <li><span class="check">✓</span> 24/7 Premium AI lab assistant</li>
+            <li><span class="check">✓</span> Zero advertisements</li>
+            <li><span class="check">✓</span> Offline downloadable modules</li>
+            <li><span class="check">✓</span> Verified STEMULAR certificates</li>
+          </ul>
+
+          <a href="start-now.html" class="btn-card btn-primary">Subscribe For 1 Year →</a>
+        </div>
+      </div>
+
+      <!-- CARD 3: 1-MONTH PREMIUM PLAN -->
+      <div class="pricing-card tilt-card" data-featured="false">
+        <div class="card-glare"></div>
+        <div class="card-content">
+          <div class="plan-name">1-Month Premium</div>
+          <div class="plan-price">₱99<span>/month</span></div>
+          <p class="plan-desc">Total flexibility with full access to all advanced learning modules.</p>
+          
+          <hr class="card-divider">
+
+          <ul class="plan-features">
+            <li><span class="check">✓</span> Unlimited Sandbox Simulations</li>
+            <li><span class="check">✓</span> Full access to quantum & aerospace labs</li>
+            <li><span class="check">✓</span> 24/7 Premium AI lab assistant</li>
+            <li><span class="check">✓</span> Zero advertisements</li>
+            <li><span class="check">✓</span> Offline downloadable modules</li>
+            <li><span class="check disabled">✕</span> <span class="text-disabled">Verified STEMULAR certificates</span></li>
+          </ul>
+
+          <a href="start-now.html" class="btn-card btn-secondary">Subscribe Monthly</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="premium-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore STEMULAR — Discover the Future of STEM Learning</title>
+  <link rel="stylesheet" href="explore-style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Ambient Background Glows -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
+  <!-- Navigation matching the About page -->
+  <header class="navbar">
+    <a href="index.html" class="logo" aria-label="STEMULAR home">
+      <span class="logo-icon">⏣</span> STEMULAR
+    </a>
+    <nav class="nav-links">
+      <a href="explore.html" class="active" aria-current="page">Explore</a>
+      <a href="premium.html">Premium</a>
+      <a href="about.html">About</a>
+    </nav>
+    <a href="start-now.html" class="btn-sm">Start Now</a>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content fade-up-init">
+      <span class="badge">WELCOME TO THE FUTURE OF EDUCATION</span>
+      <h1>Discover STEMULAR</h1>
+      <p class="hero-desc">Explore the future of Science and Mathematics learning. Experience interactive tools, AI-powered assistance, engaging lessons, and more—all designed to help students succeed.</p>
+      <div class="hero-buttons">
+        <a href="start-now.html" class="btn-primary">Get Started</a>
+        <button type="button" class="btn-secondary" onclick="document.getElementById('featured').scrollIntoView({ behavior: 'smooth' })">View Features</button>
+    </div>
+  </section>
+
+<!-- Featured Learning Preview -->
+<section id="featured" class="section-container reveal-section">
+  <div class="section-header">
+    <span class="badge">CURRICULUM PREVIEW</span>
+    <h2>Featured Learning Modules</h2>
+    <p>Sample our bite-sized, high-retention interactive course content.</p>
+  </div>
+  <div class="grid-3">
+    <!-- Card 1 -->
+    <div class="glass-card preview-card">
+      <div class="card-icon">🧬</div>
+      <h3>Science</h3>
+      <p class="card-desc">Explore cellular biology, organic chemistry structures, and thermodynamic laws through visual simulations.</p>
+      <button class="btn-card btn-outline modal-trigger" data-title="Science Module">Preview Lesson</button>
+    </div>
+    <!-- Card 2 -->
+    <div class="glass-card preview-card">
+      <div class="card-icon">📐</div>
+      <h3>Mathematics</h3>
+      <p class="card-desc">Master multivariable calculus, linear algebra matrices, and geometric proofs with step-by-step interactive solvers.</p>
+      <button class="btn-card btn-outline modal-trigger" data-title="Mathematics Module">Preview Lesson</button>
+    </div>
+    <!-- Card 3 -->
+    <div class="glass-card preview-card">
+      <div class="card-icon">⚡</div>
+      <h3>Daily Lessons</h3>
+      <p class="card-desc">Engage with daily 5-minute problem-solving challenges calibrated to keep your critical thinking skills sharp.</p>
+      <button class="btn-card btn-outline modal-trigger" data-title="Daily Lesson">Preview Lesson</button>
+    </div>
+  </div>
+</section>
+
+  <!-- AI Assistant Preview -->
+  <section class="section-container reveal-section">
+    <div class="section-header">
+      <span class="badge">24/7 TUTOR</span>
+      <h2>AI Learning Assistant</h2>
+      <p>Instant, personalized explanations for your toughest STEM questions.</p>
+    </div>
+    <div class="glass-card ai-preview-box">
+      <div class="chat-header">
+        <div class="ai-avatar">🌐</div>
+        <div class="ai-status">
+          <h4>STEMULAR AI Assistant</h4>
+          <span>● Online & Ready to Help</span>
+        </div>
+      </div>
+      <div class="chat-window">
+        <div class="msg student-msg">
+          <p>Explain Newton's First Law.</p>
+        </div>
+        <div class="msg ai-msg">
+          <p>Newton's First Law states that an object remains at rest or in uniform motion in a straight line unless acted upon by an external force. This property is known as <strong>inertia</strong>!</p>
+        </div>
+      </div>
+      <div class="chat-footer">
+        <button class="btn-primary full-width modal-trigger" data-title="AI Assistant">Try AI Preview</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sandbox Simulation Preview -->
+  <section class="section-container reveal-section">
+    <div class="section-header">
+      <span class="badge">VIRTUAL LAB</span>
+      <h2>Sandbox Simulation</h2>
+      <p>Test hypotheses without real-world hazards or laboratory costs.</p>
+    </div>
+    <div class="glass-card sandbox-preview">
+      <div class="sandbox-visual">
+        <div class="sim-graphic">
+          <div class="orbit-circle"></div>
+          <div class="core-node"></div>
+          <span class="graph-label">F = G(m₁m₂)/r²</span>
+        </div>
+        <div class="sim-details">
+          <h3>Gravitational Orbit & Physics Simulator</h3>
+          <p>Adjust planetary mass, velocity, and trajectory variables in real time to observe orbital mechanics and mathematical graph plotting simultaneously.</p>
+          <ul class="sim-tags">
+            <li>✓ Real-time Physics Engine</li>
+            <li>✓ Mathematical Graphing</li>
+            <li>✓ Circuit Board Prototyping</li>
+          </ul>
+        </div>
+      </div>
+      <button class="btn-primary full-width mt-4 modal-trigger" data-title="Sandbox Simulation">Open Sandbox</button>
+    </div>
+  </section>
+
+  <!-- Quiz Preview -->
+  <section class="section-container reveal-section">
+    <div class="section-header">
+      <span class="badge">ADAPTIVE TESTING</span>
+      <h2>Test Your Knowledge</h2>
+      <p>Try a sample interactive assessment question right now.</p>
+    </div>
+    <div class="glass-card quiz-card" id="interactive-quiz">
+      <div class="quiz-badge">Science Quiz — Planetary Astronomy</div>
+      <h3 class="quiz-question">What planet is known as the Red Planet?</h3>
+      <div class="quiz-options">
+        <label class="quiz-opt">
+          <input type="radio" name="planet" value="Venus">
+          <span>○ Venus</span>
+        </label>
+        <label class="quiz-opt">
+          <input type="radio" name="planet" value="Mars">
+          <span>○ Mars</span>
+        </label>
+        <label class="quiz-opt">
+          <input type="radio" name="planet" value="Saturn">
+          <span>○ Saturn</span>
+        </label>
+      </div>
+      <button class="btn-secondary full-width mt-4" id="submit-quiz-btn">[ Answer ]</button>
+      <div class="quiz-feedback hidden" id="quiz-feedback">
+        <p class="feedback-text">Correct! Mars appears red due to iron oxide on its surface.</p>
+        <a href="start-now.html#login" class="btn-outline full-width mt-2">Sign in to access unlimited quizzes →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Downloadable Modules Preview -->
+  <section class="section-container reveal-section">
+    <div class="section-header">
+      <span class="badge">OFFLINE ACCESS</span>
+      <h2>Downloadable Modules</h2>
+      <p>Study anywhere with high-definition, offline PDF learning packages.</p>
+    </div>
+    <div class="grid-3">
+      <div class="glass-card module-card">
+        <div class="module-thumb bio-bg">🧬 PDF</div>
+        <h4>Biology Module</h4>
+        <span class="meta">Cellular Respiration • 42 Pages</span>
+        <button class="btn-card btn-outline modal-trigger" data-title="Biology Module">Sign in to download</button>
+      </div>
+      <div class="glass-card module-card">
+        <div class="module-thumb alg-bg">📐 PDF</div>
+        <h4>Algebra Module</h4>
+        <span class="meta">Polynomial Equations • 58 Pages</span>
+        <button class="btn-card btn-outline modal-trigger" data-title="Algebra Module">Sign in to download</button>
+      </div>
+      <div class="glass-card module-card">
+        <div class="module-thumb chem-bg">⚗️ PDF</div>
+        <h4>Chemistry Module</h4>
+        <span class="meta">Atomic Bonding • 36 Pages</span>
+        <button class="btn-card btn-outline modal-trigger" data-title="Chemistry Module">Sign in to download</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEMULAR Certificate Preview -->
+  <section class="section-container reveal-section">
+    <div class="glass-card cert-showcase">
+      <div class="cert-content">
+        <span class="premium-tag">★ Premium Feature</span>
+        <h2>STEMULAR Certification</h2>
+        <p>Earn a blockchain-verified STEMULAR Certificate after completing courses and assessments. Share your verified achievements directly to your academic portfolio or resume.</p>
+        <button class="btn-primary mt-3 modal-trigger" data-title="Verified Certificates">Unlock Certification</button>
+      </div>
+      <div class="cert-mockup">
+        <div class="cert-border">
+          <div class="ribbon">🥇</div>
+          <h4>CERTIFICATE OF MASTERY</h4>
+          <p class="recipient">Awarded to Student Name</p>
+          <span class="course-name">Advanced Quantum Mechanics & Calculus</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Platform Statistics -->
+  <section id="stats" class="stats-section reveal-section">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <h3 class="counter" data-target="0">0</h3><span></span>
+        <p>Interactive Lessons</p>
+      </div>
+      <div class="stat-item">
+        <h3 class="counter" data-target="0">0</h3><span></span>
+        <p>Adaptive Quizzes</p>
+      </div>
+      <div class="stat-item">
+        <h3>24/7??</h3>
+        <p>AI Tutor Available</p>
+      </div>
+      <div class="stat-item">
+        <h3 class="counter" data-target="0">0</h3><span></span>
+        <p>Sandbox Simulations</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose STEMULAR -->
+  <section class="section-container reveal-section">
+    <div class="section-header">
+      <span class="badge">THE ADVANTAGE</span>
+      <h2>Why Choose STEMULAR</h2>
+      <p>Built by educators and technologists to accelerate scientific mastery.</p>
+    </div>
+    <div class="grid-2x2">
+      <div class="glass-card why-card">
+        <h3>📚 Learn Anytime</h3>
+        <p>Study whenever and wherever you want with multi-device cloud synchronization and offline downloadable PDF packages.</p>
+      </div>
+      <div class="glass-card why-card">
+        <h3>🤖 AI Learning Assistant</h3>
+        <p>Receive instant, step-by-step explanations and personalized problem-solving hints calibrated to your specific learning pace.</p>
+      </div>
+      <div class="glass-card why-card">
+        <h3>🧪 Interactive Sandbox</h3>
+        <p>Practice abstract scientific theories through real-time physics, chemistry, and algorithmic virtual laboratory simulations.</p>
+      </div>
+      <div class="glass-card why-card">
+        <h3>🏆 Track Your Progress</h3>
+        <p>Monitor detailed achievement analytics, learning streaks, and mastery milestones across all four STEM disciplines.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call-to-Action Section -->
+  <section id="cta" class="section-container reveal-section">
+    <div class="glass-card cta-box">
+      <h2>Ready to Start Learning?</h2>
+      <p>Create your free STEMULAR account today and unlock interactive lessons, adaptive quizzes, 24/7 AI assistance, and virtual lab simulations.</p>
+      <div class="cta-buttons">
+        <a href="start-now.html#register" class="btn-primary glow-btn">Register Now</a>
+        <a href="start-now.html#login" class="btn-secondary glow-btn">Login</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sign-in Modal Gate -->
+  <div class="modal-overlay hidden" id="gate-modal">
+    <div class="glass-card modal-box">
+      <button class="close-modal" id="close-modal-btn">✕</button>
+      <div class="modal-icon">🔒</div>
+      <h3 id="modal-title">Sign In Required</h3>
+      <p id="modal-desc">Create a free account or sign in to access this feature and unlock the full STEMULAR learning platform.</p>
+      <div class="modal-actions">
+        <a href="start-now.html#register" class="btn-primary full-width close-and-scroll">Create Free Account</a>
+        <a href="start-now.html#login" class="btn-secondary full-width mt-2 close-and-scroll">Existing User Login</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="explore-script.js"></script>
+</body>
+</html>

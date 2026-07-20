@@ -1,0 +1,311 @@
+/* --- RESET & CORE SETUP --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+:root {
+  --bg-dark-1: #04060f;
+  --bg-dark-2: #0b1128;
+  --bg-dark-3: #0f0721;
+  --accent-cyan: #00f2fe;
+  --accent-blue: #4facfe;
+  --accent-purple: #9d4edd;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-main: #ffffff;
+  --text-muted: #8b9bb4;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.12);
+}
+
+body {
+  color: var(--text-main);
+  background: linear-gradient(135deg, var(--bg-dark-1) 0%, var(--bg-dark-2) 50%, var(--bg-dark-3) 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+html {
+  scrollbar-gutter: stable;
+}
+
+/* --- AMBIENT BACKGROUND GLOWS --- */
+.ambient-glow {
+  position: fixed;
+  width: 45vw;
+  height: 45vw;
+  border-radius: 50%;
+  filter: blur(140px);
+  z-index: 0;
+  opacity: 0.22;
+  pointer-events: none;
+}
+.glow-1 { top: -10%; left: -10%; background: radial-gradient(circle, var(--accent-blue), transparent 70%); }
+.glow-2 { top: 40%; right: -10%; background: radial-gradient(circle, var(--accent-purple), transparent 70%); }
+.glow-3 { bottom: -10%; left: 20%; background: radial-gradient(circle, var(--accent-cyan), transparent 70%); }
+
+/* --- NAVIGATION --- */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 6%;
+  z-index: 20;
+  background: linear-gradient(to bottom, rgba(5, 6, 10, 0.85), transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.navbar,
+.navbar * {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.logo-icon {
+  color: var(--accent-cyan);
+  transition: text-shadow 0.2s ease;
+}
+
+.logo:hover,
+.logo:focus-visible {
+  color: var(--text-primary);
+  text-shadow: 0 0 12px rgba(0, 242, 254, 0.55);
+  outline: none;
+}
+
+.logo:hover .logo-icon,
+.logo:focus-visible .logo-icon {
+  text-shadow: 0 0 12px rgba(0, 242, 254, 0.9);
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--text-primary);
+}
+
+.nav-links a.active {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+/* Reserve active-label widths so page changes cannot move the navigation. */
+.nav-links a[href="features.html"],
+.nav-links a[href="premium.html"],
+.nav-links a[href="about.html"] {
+  display: inline-flex;
+  justify-content: center;
+}
+
+.nav-links a[href="features.html"] { width: 68px; }
+.nav-links a[href="premium.html"] { width: 63px; }
+.nav-links a[href="about.html"] { width: 48px; }
+
+.btn-sm {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.btn-sm:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.28);
+  transform: translateY(-1px);
+}
+
+/* --- PRICING PAGE SECTION --- */
+.pricing-section {
+  position: relative;
+  z-index: 10;
+  padding: 8rem 5% 5rem 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.pricing-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 4.5rem auto;
+}
+
+.badge {
+  display: inline-block; font-size: 0.75rem; font-weight: 700;
+  letter-spacing: 3px; color: var(--accent-cyan); margin-bottom: 1rem;
+}
+
+.pricing-header h1 {
+  font-size: 3rem; font-weight: 800; line-height: 1.15; margin-bottom: 1rem;
+  background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
+  background-clip: text; /* standard property for compatibility */
+  -webkit-background-clip: text;
+  color: transparent; /* fallback for browsers that support standard property */
+  -webkit-text-fill-color: transparent;
+}
+
+.pricing-header p { color: var(--text-muted); font-size: 1.1rem; line-height: 1.6; }
+
+/* --- PRICING GRID --- */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  align-items: center; /* Aligns items to center so the featured card can scale cleanly */
+}
+
+/* --- GLASSMORPHISM PRICING CARD --- */
+.pricing-card {
+  position: relative;
+  background: var(--glass-bg);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--glass-border);
+  border-radius: 28px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  transform-style: preserve-3d;
+  will-change: transform;
+  /* Smooth transition for resetting position on mouseleave */
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease, border-color 0.6s ease;
+}
+
+/* Dynamic glare layer inside the card controlled by JS */
+.card-glare {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  border-radius: 28px; pointer-events: none; opacity: 0;
+  background: radial-gradient(600px circle at 50% 50%, rgba(255, 255, 255, 0.12), transparent 60%);
+  transition: opacity 0.4s ease;
+}
+
+.card-content {
+  position: relative;
+  z-index: 2;
+  transform: translateZ(30px); /* Lifts content slightly off the glass plane in 3D */
+}
+
+.plan-name { font-size: 1.15rem; font-weight: 600; color: var(--text-muted); margin-bottom: 0.5rem; }
+
+.plan-price { font-size: 2.75rem; font-weight: 800; color: #ffffff; margin-bottom: 1rem; }
+.plan-price span { font-size: 1rem; font-weight: 500; color: var(--text-muted); }
+
+.plan-desc { font-size: 0.95rem; color: var(--text-muted); line-height: 1.5; min-height: 44px; }
+
+.card-divider { border: 0; height: 1px; background: rgba(255, 255, 255, 0.08); margin: 1.5rem 0; }
+
+/* Features List */
+.plan-features { list-style: none; margin-bottom: 2.5rem; display: flex; flex-direction: column; gap: 1rem; }
+.plan-features li { display: flex; align-items: center; gap: 0.75rem; font-size: 0.95rem; color: #e2e8f0; }
+.check { color: var(--accent-cyan); font-weight: 700; font-size: 1.1rem; }
+.check.disabled { color: #475569; }
+.text-disabled { color: #475569; text-decoration: line-through; }
+
+/* Buttons */
+.btn-card {
+  display: block; width: 100%; padding: 1rem; text-align: center; font-weight: 700;
+  border-radius: 14px; text-decoration: none; transition: all 0.3s ease;
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.15); color: #ffffff;
+}
+.btn-secondary:hover { background: rgba(255, 255, 255, 0.15); border-color: rgba(255, 255, 255, 0.3); }
+
+/* --- FEATURED / HIGHLIGHTED CARD (1-Year Plan) --- */
+.pricing-card.featured {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(0, 242, 254, 0.4);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 242, 254, 0.15);
+  padding: 3rem 2.25rem; /* Slightly larger padding makes it taller */
+  transform: scale(1.04);
+}
+
+.popular-tag {
+  position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+  color: #000000; font-size: 0.75rem; font-weight: 800; letter-spacing: 1px;
+  padding: 0.4rem 1.2rem; border-radius: 50px; box-shadow: 0 4px 15px rgba(0, 242, 254, 0.4);
+  z-index: 5;
+  text-align: center;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+  color: #000000; box-shadow: 0 0 20px rgba(0, 242, 254, 0.3);
+}
+.btn-primary:hover { box-shadow: 0 0 30px rgba(0, 242, 254, 0.6); transform: translateY(-2px); }
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+@media (max-width: 1024px) {
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /* Make the featured 1-Year plan span the full width on tablet to stand out */
+  .pricing-card.featured {
+    grid-column: span 2;
+    order: -1; /* Put it at the very top */
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar { padding: 1.2rem 5%; }
+  .nav-links { display: none; }
+  .btn-sm { padding: 6px 12px; font-size: 0.75rem; }
+  
+  .pricing-header h1 { font-size: 2.25rem; }
+  
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .pricing-card.featured {
+    grid-column: span 1;
+  }
+  
+  .pricing-card {
+    padding: 2rem 1.5rem;
+  }
+}
