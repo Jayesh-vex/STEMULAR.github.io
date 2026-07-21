@@ -12,8 +12,8 @@
 @media (max-width: 680px) {
   :root {
     --w5: 48vw;              
-    --w4: 38vw;              
-    --spacing: 4px;
+    --w4: 40vw;      
+    --spacing: 1px;
     --button-margin: 40px;   
     --button-font-size: 2rem;
     --button-align: center;
@@ -30,7 +30,7 @@
 @media (max-width: 400px) {
   :root {
     --w5: 50vw;
-    --w4: 36vw;
+    --w4: 49vw;
     --button-margin: 30px;
   }
 }
