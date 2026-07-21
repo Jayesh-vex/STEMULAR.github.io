@@ -11,11 +11,17 @@
 /* --- Mobile & Tablet Breakpoints --- */
 @media (max-width: 680px) {
   :root {
-    /* Scaled down for mobile viewports (uses responsive viewport width units) */
     --w5: 48vw;              
     --w4: 38vw;              
     --spacing: 4px;
-    --button-margin: 40px;   /* Slightly closer button on smaller mobile screens */
+    --button-margin: 40px;   
+  }
+  
+  /* Scales down blur balls on mobile to prevent rendering lag */
+  .blur-ball {
+    width: 220px !important;
+    height: 220px !important;
+    filter: blur(50px) !important;
   }
 }
 
@@ -38,15 +44,78 @@ body {
   background-color: #ffffff;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   min-height: 100vh;
-  /* Handles mobile browser address bar height changes */
   min-height: 100dvh; 
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow-x: hidden; /* Prevents horizontal scrollbars on mobile */
+  overflow: hidden; /* Keeps floating balls from creating scrollbars */
   padding: 16px;
+  position: relative;
 }
 
+/* --- Animated Background Layer --- */
+.bg-animated {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  
+  background: linear-gradient(135deg, #ffffff, #e3f3f7, #cbe7f0, #f4fafd, #ffffff);
+  background-size: 400% 400%;
+  
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+  pointer-events: none;
+}
+
+.bg-animated.show {
+  opacity: 1;
+  animation: gradientWave 12s ease infinite;
+}
+
+@keyframes gradientWave {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* --- Ambient Blur Balls --- */
+.blur-ball {
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.55;
+  will-change: transform;
+  animation: floatBall 8s ease-in-out infinite alternate;
+}
+
+.ball-left {
+  top: 15%;
+  left: -100px;
+  background: #62c3d7; /* Bright ambient teal */
+  animation-delay: 0s;
+}
+
+.ball-right {
+  bottom: 15%;
+  right: -100px;
+  background: #0d5c75; /* Deep brand teal */
+  animation-delay: -4s; /* Offset timing so they don't bounce identically */
+}
+
+@keyframes floatBall {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    transform: translateY(-40px) scale(1.1);
+  }
+}
+
+/* --- Main Layout Container --- */
 .stage-container {
   display: flex;
   flex-direction: column;
@@ -54,6 +123,8 @@ body {
   justify-content: center;
   width: 100%;
   max-width: 1200px;
+  position: relative;
+  z-index: 10;
 }
 
 /* --- Image Stage & Alignment --- */
@@ -72,7 +143,7 @@ body {
   align-items: center;
   transition: transform var(--anim-duration) var(--anim-easing), 
               opacity var(--anim-duration) var(--anim-easing);
-  will-change: transform, opacity; /* Optimizes mobile GPU hardware acceleration */
+  will-change: transform, opacity;
 }
 
 .anim-img {
@@ -86,7 +157,6 @@ body {
   width: var(--w5);
   max-width: 100%;
   z-index: 2;
-  /* Shifts 5.png right so its visual center lines up with screen center on load */
   transform: translateX(calc((var(--w4) + var(--spacing)) / 2));
 }
 
@@ -95,7 +165,6 @@ body {
   max-width: 100%;
   z-index: 1;
   opacity: 0;
-  /* Positions 4.png directly behind 5.png on load */
   transform: translateX(calc(-1 * (var(--w5) + var(--spacing)) / 2));
 }
 
@@ -111,7 +180,7 @@ body {
 
 /* --- Responsive Button Styling & Fade-in --- */
 .button-container {
-  margin-top: var(--button-margin);
+  margin-top: 20px;
   min-height: 50px;
   display: flex;
   justify-content: center;
@@ -133,7 +202,6 @@ body {
   transition: opacity 1s ease, background-color 0.2s ease, transform 0.2s ease;
   max-width: 100%;
   
-  /* Initial Hidden State */
   opacity: 0;
   pointer-events: none;
 }
@@ -148,7 +216,6 @@ body {
   pointer-events: auto;
 }
 
-/* Mobile typography scale */
 @media (max-width: 480px) {
   .action-btn {
     padding: 12px 20px;
