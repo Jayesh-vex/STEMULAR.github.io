@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Animation Sequence</title>
+  <link rel="stylesheet" href="Enter_page.css">
+</head>
+<body>
+
+  <main class="stage-container">
+    <!-- Image Stage -->
+    <div class="images-stage" id="stage">
+      
+      <!-- 5.png (Starts centered, slides left) -->
+      <div class="img-wrapper" id="wrapper-5">
+        <img src="5.png" alt="Primary Image" class="anim-img">
+      </div>
+
+      <!-- 4.png (Starts centered & invisible behind 5.png, pans right) -->
+      <div class="img-wrapper" id="wrapper-4">
+        <img src="4.png" alt="Secondary Image" class="anim-img">
+      </div>
+
+    </div>
+
+    <!-- Editable Action Button -->
+    <div class="button-container">
+      <!-- Edit the href link and button text below -->
+      <a href="index.html" class="action-btn" id="actionBtn" target="_blank">
+        Visit STEMULAR
+      </a>
+    </div>
+  </main>
+
+  <script src="Enter_page.js"></script>
+</body>
+</html>
